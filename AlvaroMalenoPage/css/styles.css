@@ -118,7 +118,7 @@ header .logo{
     position: relative;
     font-size: 3rem;
     left: 2%;
-    font-family: "Playfair Display", serif;
+    font-family: "Ubuntu", serif;
     color: antiquewhite;
 }
 nav .navbar{
@@ -136,7 +136,7 @@ nav .navbar{
     border: 0px none dimgray;
     background-color: dimgray;
     position: relative;
-    top: -43px;
+    top: -34px;
     font-weight: bold;
     text-decoration: overline;
     color: antiquewhite;
@@ -297,7 +297,7 @@ footer{
     top: 100%;
     bottom: -10px;
     border-radius: 3%;
-    font-family: "Playfair Display", serif;
+    font-family: "Ubuntu", serif;
 }
 
 footer p{
