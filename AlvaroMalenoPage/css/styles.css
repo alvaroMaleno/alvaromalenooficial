@@ -97,6 +97,7 @@
 body{
     font-family: "Ubuntu", arial;
     background-color: antiquewhite;
+    text-align: justify;
     
 }
 /* Superior Section*/
@@ -154,6 +155,30 @@ nav .navbar{
 }
 
 /* Intermediate Section */
+
+a:link {
+    color: black;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+a:visited {
+color: black;
+background-color: transparent;
+text-decoration: underline;
+}
+
+a:hover {
+    color: dimgray;
+    background-color: transparent;
+    text-decoration: underline;
+  }
+
+.preview:hover {
+    color: dimgray;
+    background-color: transparent;
+    text-decoration: underline;
+  }
 
 .preview::first-letter{
     font-size: 5rem;
