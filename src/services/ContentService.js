@@ -36,4 +36,23 @@ export class ContentService {
     if (!data) return null;
     return createContentInstance(data, lang);
   }
+
+  async getPostByIdAsync(id, lang) {
+    const data = this.posts.value.find(p => p.id === id);
+    if (!data) return null;
+    
+    if (data.meta_path && !data._fullMetaLoaded) {
+      try {
+        const response = await fetch(data.meta_path + '?t=' + new Date().getTime());
+        if (response.ok) {
+          const fullMeta = await response.json();
+          Object.assign(data, fullMeta);
+          data._fullMetaLoaded = true;
+        }
+      } catch(e) {
+        console.error("Failed to load full meta for", id, e);
+      }
+    }
+    return createContentInstance(data, lang);
+  }
 }

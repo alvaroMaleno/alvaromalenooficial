@@ -20,29 +20,34 @@ If you use Visual Studio Code, you can install the "Live Server" extension. Just
 
 ## 2. Maintenance Guide
 
-The site's content is completely decoupled from the application logic. It uses Markdown (`.md`) files for the actual text and a central JSON file for indexing.
+The site's content is completely decoupled from the application logic. It uses Markdown (`.md`) files for the actual text, but heavy metadata is distributed across individual folders.
 
 ### How to add new content
-1. **Create the Markdown files**: Place your new content inside the `content/` folder, structured by section and id. For example, `content/articulos/mi-nuevo-articulo.es.md` and `content/articulos/mi-nuevo-articulo.en.md` for bilingual support.
-2. **Register the content in the Index**: Open `content/index.json` and add a new entry to the JSON array. This is what the application reads to list available posts.
+1. **Create the Folder Structure**: Each post (story, poem, article, book) must have its own subfolder within the corresponding section (e.g., `content/poemas/my-new-poem/`).
+2. **Create the Metadata file (`meta.json`)**: Inside that new folder, create a `meta.json` file. This file will contain structural information (like chapter configs if multipage).
+3. **Create the Markdown files**: Place your new text content inside the folder, structured by language (e.g., `my-new-poem.es.md` and `my-new-poem.en.md`).
+4. **Register the content in the General Index**: Open `content/index.json` and add a lightweight summary of your post. The application reads this index to list and sort content, and only loads the full `meta.json` asynchronously when the user clicks to read it.
 
-**Example of an entry in `index.json`:**
+**Example of a lightweight entry in `index.json`:**
 ```json
 {
-  "id": "mi-nuevo-articulo",
-  "section": "articulos",
+  "id": "my-new-poem",
+  "section": "poemas",
   "date": "2026-05-24",
-  "is_multipage": false,
-  "es": {
-    "title": "Mi Nuevo Artículo",
-    "excerpt": "Un breve resumen del artículo para mostrar en la lista."
-  },
   "en": {
-    "title": "My New Article",
-    "excerpt": "A short summary of the article to display in the list."
-  }
+    "title": "My New Poem",
+    "excerpt": "A short summary..."
+  },
+  "es": {
+    "title": "Mi Nuevo Poema",
+    "excerpt": "Un breve resumen..."
+  },
+  "meta_path": "./content/poemas/my-new-poem/meta.json"
 }
 ```
+
+### Articles and Series
+Articles support grouping by **Series**. To add an article to a thematic series, place it in an additional subfolder: `content/articulos/[series-name]/[my-article]/`. Also, make sure to add `"series": "series-name"` to the `index.json` entry.
 
 ## 3. Technologies Used
 

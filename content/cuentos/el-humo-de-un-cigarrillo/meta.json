@@ -1,0 +1,17 @@
+{
+  "is_multipage": true,
+  "chapters": [
+    {
+      "folder": "1",
+      "en": { "title": "The Night" },
+      "es": { "title": "La Noche" },
+      "parts": [
+        { "file": "I", "en": { "title": "Part I" }, "es": { "title": "Parte I" } },
+        { "file": "II", "en": { "title": "Part II" }, "es": { "title": "Parte II" } },
+        { "file": "III", "en": { "title": "Part III" }, "es": { "title": "Parte III" } },
+        { "file": "IV", "en": { "title": "Part IV" }, "es": { "title": "Parte IV" } },
+        { "file": "V", "en": { "title": "Part V" }, "es": { "title": "Parte V" } }
+      ]
+    }
+  ]
+}

@@ -3,68 +3,35 @@
     "id": "el-libro",
     "section": "libros",
     "date": "2026-05-24",
-    "is_multipage": true,
     "en": {
       "title": "The Book of Zenith",
-      "excerpt": "A novel about minimalism and AI."
+      "excerpt": "Coming soon..."
     },
     "es": {
       "title": "El Libro del Cenit",
-      "excerpt": "Una novela sobre el minimalismo y la IA."
+      "excerpt": "Próximamente..."
     },
-    "chapters": [
-      {
-        "folder": "V",
-        "en": { "title": "Chapter V: The Arrival" },
-        "es": { "title": "Capítulo V: La Llegada" },
-        "parts": [
-          {
-            "file": "0.V",
-            "en": { "title": "Part 0" },
-            "es": { "title": "Parte 0" },
-            "video": "./assets/videos/mov_bbb.mp4"
-          },
-          {
-            "file": "1.V",
-            "en": { "title": "Part 1" },
-            "es": { "title": "Parte 1" }
-          }
-        ]
-      }
-    ]
+    "meta_path": "./content/libros/el-libro/meta.json"
   },
   {
-    "id": "mi-cuento",
+    "id": "el-humo-de-un-cigarrillo",
     "section": "cuentos",
-    "date": "2026-05-24",
-    "is_multipage": true,
+    "date": "2026-05-25",
     "en": {
-      "title": "The Infinite Story",
-      "excerpt": "A story divided into small parts."
+      "title": "The Smoke of a Cigarette",
+      "excerpt": "Between the immense windows of the Summer House and the dazzling curtains of satin blue..."
     },
     "es": {
-      "title": "El Cuento Infinito",
-      "excerpt": "Un cuento dividido en pequeñas partes."
+      "title": "El humo de un cigarrillo",
+      "excerpt": "Entre los inmensos ventanales de la Casa del Estío y las deslumbrantes cortinas de azul satinado..."
     },
-    "chapters": [
-      {
-        "folder": "1",
-        "en": { "title": "First Part" },
-        "es": { "title": "Primera Parte" },
-        "parts": [
-          {
-            "file": "1.1",
-            "en": { "title": "Beginning" },
-            "es": { "title": "Comienzo" }
-          }
-        ]
-      }
-    ]
+    "meta_path": "./content/cuentos/el-humo-de-un-cigarrillo/meta.json"
   },
   {
     "id": "primer-articulo",
     "section": "articulos",
     "date": "2026-05-24",
+    "series": "miscelanea",
     "en": {
       "title": "Minimalism as a Way of Life",
       "excerpt": "A short reflection on how to simplify our lives to find greater peace and mental clarity."
@@ -72,7 +39,8 @@
     "es": {
       "title": "El Minimalismo como Forma de Vida",
       "excerpt": "Una pequeña reflexión sobre cómo simplificar nuestra vida para encontrar mayor paz y claridad mental."
-    }
+    },
+    "meta_path": "./content/articulos/miscelanea/primer-articulo/meta.json"
   },
   {
     "id": "reflexion-1",
@@ -80,16 +48,40 @@
     "date": "2026-05-24",
     "en": {
       "title": "The Empty Space",
-      "excerpt": "On the importance of silence.",
-      "quote": "Silence is not the absence of sound, but the presence of everything else.",
-      "quote_author": "Unknown Master"
+      "excerpt": "On the importance of silence."
     },
     "es": {
       "title": "El Espacio Vacío",
-      "excerpt": "Sobre la importancia del silencio.",
-      "quote": "El silencio no es la ausencia de sonido, sino la presencia de todo lo demás.",
-      "quote_author": "Maestro Desconocido"
+      "excerpt": "Sobre la importancia del silencio."
     },
-    "quote_image": "./assets/images/reflexion-1.jpg"
+    "meta_path": "./content/reflexiones/reflexion-1/meta.json"
+  },
+  {
+    "id": "el-sol-del-verano",
+    "section": "poemas",
+    "date": "2026-05-24",
+    "en": {
+      "title": "The Summer Sun",
+      "excerpt": "Translation pending..."
+    },
+    "es": {
+      "title": "El sol del verano",
+      "excerpt": "Me gustaría entrar en tu vida como el sol del verano lo hace por tu ventana..."
+    },
+    "meta_path": "./content/poemas/el-sol-del-verano/meta.json"
+  },
+  {
+    "id": "ahora-que-todo-esta-claro",
+    "section": "poemas",
+    "date": "2026-05-24",
+    "en": {
+      "title": "Now that everything is clear",
+      "excerpt": "Translation pending..."
+    },
+    "es": {
+      "title": "Ahora que todo está claro",
+      "excerpt": "Ahora que conozco el daño que ejerce el polizonte, de una mente dolorida..."
+    },
+    "meta_path": "./content/poemas/ahora-que-todo-esta-claro/meta.json"
   }
 ]

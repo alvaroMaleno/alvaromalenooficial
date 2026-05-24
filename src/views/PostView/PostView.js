@@ -97,10 +97,7 @@ export default {
     
     const pagination = reactive(new PaginationState());
 
-    const postMeta = computed(() => {
-      const meta = contentService.getPostById(route.params.id, props.lang);
-      return meta || { title: '', date: '', is_multipage: false };
-    });
+    const postMeta = ref({ title: '', date: '', is_multipage: false });
 
     const isMultipage = computed(() => postMeta.value.is_multipage);
 
@@ -139,21 +136,36 @@ export default {
     });
 
     const loadContent = async () => {
-      if (!postMeta.value.id) return; 
+      const id = route.params.id;
+      if (!id) return; 
       
       loading.value = true;
       error.value = false;
       const section = route.params.section;
-      const id = route.params.id;
-      
-      let fetchUrl = '';
-      if (isMultipage.value && currentPartMeta.value) {
-        fetchUrl = './content/' + section + '/' + id + '/' + currentPartMeta.value.folder + '/' + currentPartMeta.value.file + '.' + props.lang + '.md';
-      } else {
-        fetchUrl = './content/' + section + '/' + id + '.' + props.lang + '.md';
-      }
       
       try {
+        const fullMeta = await contentService.getPostByIdAsync(id, props.lang);
+        if (!fullMeta) throw new Error("Content not found in index");
+        postMeta.value = fullMeta;
+
+        // SEO: Dynamic metadata update
+        document.title = `${fullMeta.title} | Álvaro Maleno`;
+        const metaDesc = document.getElementById('meta-description');
+        if (metaDesc && fullMeta.excerpt) metaDesc.content = fullMeta.excerpt;
+        const ogTitle = document.getElementById('og-title');
+        if (ogTitle) ogTitle.content = fullMeta.title;
+        const ogDesc = document.getElementById('og-description');
+        if (ogDesc && fullMeta.excerpt) ogDesc.content = fullMeta.excerpt;
+
+        let fetchUrl = '';
+        if (isMultipage.value && currentPartMeta.value) {
+          fetchUrl = './content/' + section + '/' + id + '/' + currentPartMeta.value.folder + '/' + currentPartMeta.value.file + '.' + props.lang + '.md';
+        } else if (postMeta.value.series) {
+          fetchUrl = './content/' + section + '/' + postMeta.value.series + '/' + id + '/' + id + '.' + props.lang + '.md';
+        } else {
+          fetchUrl = './content/' + section + '/' + id + '/' + id + '.' + props.lang + '.md';
+        }
+        
         const pages = await markdownService.fetchAndProcess(fetchUrl);
         pagination.resetPages(pages);
       } catch (e) {
@@ -200,11 +212,11 @@ export default {
     };
 
     onMounted(() => {
-      if (postMeta.value.id) loadContent();
+      loadContent();
     });
     
     watch(() => props.lang, loadContent);
-    watch(() => postMeta.value.id, (newId, oldId) => {
+    watch(() => route.params.id, (newId, oldId) => {
       if (newId && newId !== oldId) {
         pagination.currentChapterIdx = 0;
         pagination.currentPartIdx = 0;

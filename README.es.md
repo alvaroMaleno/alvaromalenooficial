@@ -20,29 +20,34 @@ Si usas Visual Studio Code, puedes instalar la extensión "Live Server". Simplem
 
 ## 2. Guía de Mantenimiento
 
-El contenido del sitio está completamente desacoplado de la lógica de la aplicación. Utiliza archivos Markdown (`.md`) para el texto en sí y un archivo JSON central para el índice.
+El contenido del sitio está completamente desacoplado de la lógica de la aplicación. Utiliza archivos Markdown (`.md`) para el texto, pero los metadatos pesados de cada elemento están distribuidos en carpetas individuales.
 
 ### Cómo añadir nuevo contenido
-1. **Crea los archivos Markdown**: Coloca tu nuevo contenido dentro de la carpeta `content/`, estructurado por sección e id. Por ejemplo, `content/articulos/mi-nuevo-articulo.es.md` y `content/articulos/mi-nuevo-articulo.en.md` para soporte bilingüe.
-2. **Registra el contenido en el Índice**: Abre `content/index.json` y añade una nueva entrada al array JSON. Esto es lo que la aplicación lee para listar las publicaciones disponibles.
+1. **Crea la estructura de carpetas**: Cada publicación (cuento, poema, artículo, libro) debe tener su propia subcarpeta dentro de la sección correspondiente (ej. `content/poemas/mi-nuevo-poema/`).
+2. **Crea el archivo de metadatos (`meta.json`)**: Dentro de esa nueva carpeta, crea un archivo `meta.json`. Este archivo contendrá la información estructural de la obra (como la configuración de capítulos y partes si es multipágina).
+3. **Crea los archivos Markdown**: Guarda tus textos en esa misma carpeta, estructurados por idioma (ej. `mi-nuevo-poema.es.md` y `mi-nuevo-poema.en.md`).
+4. **Registra el contenido en el Índice General**: Abre `content/index.json` y añade un resumen ligero de tu publicación. La aplicación lee este índice para listar y ordenar el contenido, y solo carga el `meta.json` completo asíncronamente cuando el usuario entra a leerlo.
 
-**Ejemplo de una entrada en `index.json`:**
+**Ejemplo de una entrada ligera en `index.json`:**
 ```json
 {
-  "id": "mi-nuevo-articulo",
-  "section": "articulos",
+  "id": "mi-nuevo-poema",
+  "section": "poemas",
   "date": "2026-05-24",
-  "is_multipage": false,
-  "es": {
-    "title": "Mi Nuevo Artículo",
-    "excerpt": "Un breve resumen del artículo para mostrar en la lista."
-  },
   "en": {
-    "title": "My New Article",
-    "excerpt": "A short summary of the article to display in the list."
-  }
+    "title": "My New Poem",
+    "excerpt": "A short summary..."
+  },
+  "es": {
+    "title": "Mi Nuevo Poema",
+    "excerpt": "Un breve resumen..."
+  },
+  "meta_path": "./content/poemas/mi-nuevo-poema/meta.json"
 }
 ```
+
+### Artículos y Series
+Los Artículos soportan la agrupación por **Series**. Para añadir un artículo a una serie temática, colócalo en una subcarpeta adicional: `content/articulos/[nombre-de-la-serie]/[mi-articulo]/`. Además, debes añadir el campo `"series": "nombre-de-la-serie"` en la entrada de `index.json`.
 
 ## 3. Tecnologías Usadas
 

@@ -18,7 +18,12 @@ export class MultipageContent extends Content {
 
 export class Book extends MultipageContent {}
 export class Story extends MultipageContent {}
-export class Article extends MultipageContent {}
+export class Article extends MultipageContent {
+  constructor(data, lang) {
+    super(data, lang);
+    this.series = data.series || null;
+  }
+}
 
 export class Poem extends Content {}
 export class Reflection extends Content {
