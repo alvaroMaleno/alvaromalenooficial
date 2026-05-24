@@ -1,0 +1,95 @@
+[
+  {
+    "id": "el-libro",
+    "section": "libros",
+    "date": "2026-05-24",
+    "is_multipage": true,
+    "en": {
+      "title": "The Book of Zenith",
+      "excerpt": "A novel about minimalism and AI."
+    },
+    "es": {
+      "title": "El Libro del Cenit",
+      "excerpt": "Una novela sobre el minimalismo y la IA."
+    },
+    "chapters": [
+      {
+        "folder": "V",
+        "en": { "title": "Chapter V: The Arrival" },
+        "es": { "title": "Capítulo V: La Llegada" },
+        "parts": [
+          {
+            "file": "0.V",
+            "en": { "title": "Part 0" },
+            "es": { "title": "Parte 0" },
+            "video": "https://www.w3schools.com/html/mov_bbb.mp4"
+          },
+          {
+            "file": "1.V",
+            "en": { "title": "Part 1" },
+            "es": { "title": "Parte 1" }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mi-cuento",
+    "section": "cuentos",
+    "date": "2026-05-24",
+    "is_multipage": true,
+    "en": {
+      "title": "The Infinite Story",
+      "excerpt": "A story divided into small parts."
+    },
+    "es": {
+      "title": "El Cuento Infinito",
+      "excerpt": "Un cuento dividido en pequeñas partes."
+    },
+    "chapters": [
+      {
+        "folder": "1",
+        "en": { "title": "First Part" },
+        "es": { "title": "Primera Parte" },
+        "parts": [
+          {
+            "file": "1.1",
+            "en": { "title": "Beginning" },
+            "es": { "title": "Comienzo" }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "primer-articulo",
+    "section": "articulos",
+    "date": "2026-05-24",
+    "en": {
+      "title": "Minimalism as a Way of Life",
+      "excerpt": "A short reflection on how to simplify our lives to find greater peace and mental clarity."
+    },
+    "es": {
+      "title": "El Minimalismo como Forma de Vida",
+      "excerpt": "Una pequeña reflexión sobre cómo simplificar nuestra vida para encontrar mayor paz y claridad mental."
+    }
+  },
+  {
+    "id": "reflexion-1",
+    "section": "reflexiones",
+    "date": "2026-05-24",
+    "en": {
+      "title": "The Empty Space",
+      "excerpt": "On the importance of silence.",
+      "quote": "Silence is not the absence of sound, but the presence of everything else.",
+      "quote_author": "Unknown Master"
+    },
+    "es": {
+      "title": "El Espacio Vacío",
+      "excerpt": "Sobre la importancia del silencio.",
+      "quote": "El silencio no es la ausencia de sonido, sino la presencia de todo lo demás.",
+      "quote_author": "Maestro Desconocido"
+    },
+    "quote_image": "https://images.unsplash.com/photo-1545987796-200677ee1011?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+  }
+]

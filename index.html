@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Álvaro Maleno</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="https://unpkg.com/vue-router@4"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+  <div id="app">
+    <div class="container">
+      <header class="header">
+        <div class="logo">
+          <router-link to="/">Álvaro Maleno</router-link>
+        </div>
+        <nav class="nav">
+          <router-link to="/articulos" class="nav-link">{{ dict.articles }}</router-link>
+          <router-link to="/libros" class="nav-link">{{ dict.books }}</router-link>
+          <router-link to="/cuentos" class="nav-link">{{ dict.stories }}</router-link>
+          <router-link to="/poemas" class="nav-link">{{ dict.poems }}</router-link>
+          <router-link to="/reflexiones" class="nav-link">{{ dict.reflections }}</router-link>
+        </nav>
+        <div class="lang-switch">
+          <span class="lang-btn" :class="{ active: lang === 'en' }" @click="setLang('en')">EN</span>
+          <span>|</span>
+          <span class="lang-btn" :class="{ active: lang === 'es' }" @click="setLang('es')">ES</span>
+        </div>
+      </header>
+
+      <main>
+        <router-view v-slot="{ Component }">
+          <component :is="Component" :lang="lang" :dict="dict"></component>
+        </router-view>
+      </main>
+
+      <footer class="footer">
+        <div class="footer-links">
+          <span>{{ dict.contact }}: </span>
+          <a href="https://www.facebook.com/%C3%81lvaro-Maleno-Alf%C3%A9rez-110473840760715" target="_blank" rel="noreferrer">Facebook</a> | 
+          <a href="https://twitter.com/MalenoAlvaro" target="_blank" rel="noreferrer">Twitter</a> | 
+          <a href="https://www.linkedin.com/company/%C3%A1lvaro-maleno-alf%C3%A9rez" target="_blank" rel="noreferrer">LinkedIn</a> | 
+          <a href="https://www.instagram.com/alvaro_maleno/" target="_blank" rel="noreferrer">Instagram</a>
+        </div>
+        <div>
+          <p>&#169; Álvaro Maleno Alférez</p>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>

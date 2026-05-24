@@ -1,0 +1,1 @@
+Vivimos en una época donde el ruido constante llena cada hueco de nuestro día. El silencio no es un vacío que deba ser llenado, sino un lienzo sobre el cual nuestros verdaderos pensamientos pueden dibujarse. Al abrazar el espacio vacío, no estamos perdiendo nada, sino ganando el mundo entero.
