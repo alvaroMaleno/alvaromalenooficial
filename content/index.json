@@ -22,7 +22,7 @@
             "file": "0.V",
             "en": { "title": "Part 0" },
             "es": { "title": "Parte 0" },
-            "video": "https://www.w3schools.com/html/mov_bbb.mp4"
+            "video": "./assets/videos/mov_bbb.mp4"
           },
           {
             "file": "1.V",
@@ -90,6 +90,6 @@
       "quote": "El silencio no es la ausencia de sonido, sino la presencia de todo lo demás.",
       "quote_author": "Maestro Desconocido"
     },
-    "quote_image": "https://images.unsplash.com/photo-1545987796-200677ee1011?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+    "quote_image": "./assets/images/reflexion-1.jpg"
   }
 ]
