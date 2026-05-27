@@ -53,7 +53,13 @@ export class ContentService {
         const response = await fetch(data.meta_path + '?t=' + new Date().getTime());
         if (response.ok) {
           const fullMeta = await response.json();
-          Object.assign(data, fullMeta);
+          for (const key in fullMeta) {
+            if (typeof fullMeta[key] === 'object' && fullMeta[key] !== null && !Array.isArray(fullMeta[key]) && data[key]) {
+              data[key] = { ...data[key], ...fullMeta[key] };
+            } else {
+              data[key] = fullMeta[key];
+            }
+          }
           data._fullMetaLoaded = true;
         }
       } catch(e) {
