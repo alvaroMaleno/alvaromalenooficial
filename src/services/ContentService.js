@@ -4,17 +4,23 @@ const { ref } = Vue;
 export class ContentService {
   constructor() {
     this.posts = ref([]);
+    this.loadPromise = null;
   }
 
   async loadPosts() {
-    try {
-      const response = await fetch('./content/index.json?t=' + new Date().getTime());
-      if (response.ok) {
-        this.posts.value = await response.json();
-      }
-    } catch (e) {
-      console.error("Failed to load posts index", e);
+    if (!this.loadPromise) {
+      this.loadPromise = (async () => {
+        try {
+          const response = await fetch('./content/index.json?t=' + new Date().getTime());
+          if (response.ok) {
+            this.posts.value = await response.json();
+          }
+        } catch (e) {
+          console.error("Failed to load posts index", e);
+        }
+      })();
     }
+    return this.loadPromise;
   }
 
   getLatestPosts(lang) {
@@ -38,6 +44,7 @@ export class ContentService {
   }
 
   async getPostByIdAsync(id, lang) {
+    await this.loadPosts();
     const data = this.posts.value.find(p => p.id === id);
     if (!data) return null;
     
