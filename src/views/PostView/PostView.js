@@ -2,6 +2,8 @@ const { computed, ref, onMounted, watch, inject, reactive } = Vue;
 
 import ReaderSidebar from '../../components/ReaderSidebar/ReaderSidebar.js';
 import VideoPlayer from '../../components/Multimedia/VideoPlayer.js';
+import YoutubePlayer from '../../components/Multimedia/YoutubePlayer.js';
+import AudioPlayer from '../../components/Multimedia/AudioPlayer.js';
 import ImageDisplay from '../../components/Multimedia/ImageDisplay.js';
 import PaginationControls from '../../components/PaginationControls/PaginationControls.js';
 import { PaginationState } from '../../models/PaginationState.js';
@@ -12,6 +14,8 @@ export default {
   components: {
     ReaderSidebar,
     VideoPlayer,
+    YoutubePlayer,
+    AudioPlayer,
     ImageDisplay,
     PaginationControls
   },
@@ -51,6 +55,15 @@ export default {
           <VideoPlayer 
             v-if="currentPartMultimedia && currentPartMultimedia.isVideo" 
             :src="currentPartMultimedia.src" 
+          />
+          <YoutubePlayer 
+            v-if="currentPartMultimedia && currentPartMultimedia.isYoutube" 
+            :src="currentPartMultimedia.src" 
+          />
+          
+          <AudioPlayer 
+            v-if="currentPartAudio && currentPartAudio.isAudio" 
+            :src="currentPartAudio.src" 
           />
 
           <!-- Page Content -->
@@ -108,6 +121,7 @@ export default {
         const part = chapter.parts[pagination.currentPartIdx];
         return {
           title: part[props.lang] ? part[props.lang].title : '',
+          audio: part[props.lang] ? part[props.lang].audio : null,
           video: part.video,
           file: part.file,
           folder: chapter.folder
@@ -120,6 +134,11 @@ export default {
     const currentPartMultimedia = computed(() => {
       if (!currentPartMeta.value || !currentPartMeta.value.video) return null;
       return createMultimedia(currentPartMeta.value.video);
+    });
+
+    const currentPartAudio = computed(() => {
+      if (!currentPartMeta.value || !currentPartMeta.value.audio) return null;
+      return createMultimedia(currentPartMeta.value.audio);
     });
 
     const currentPageHtml = computed(() => {
@@ -226,7 +245,7 @@ export default {
 
     return { 
       loading, error, errorMessage, postMeta, isMultipage,
-      currentPartMeta, currentPartMultimedia, 
+      currentPartMeta, currentPartMultimedia, currentPartAudio,
       currentPageHtml, pagination,
       mobileSidebarOpen, goToPart, nextPage, prevPage, isLastPageOfBook
     };

@@ -1,3 +1,24 @@
 {
-  "is_multipage": false
+  "is_multipage": true,
+  "chapters": [
+    {
+      "folder": "1",
+      "en": { "title": "The Illusion of Growth" },
+      "es": { "title": "La Ilusión del Crecimiento" },
+      "parts": [
+        { 
+          "file": "seccion_1", 
+          "en": { 
+            "title": "The beginning of the story",
+            "audio": "./content/libros/el-libro/1/seccion_1_en.mp3"
+          }, 
+          "es": { 
+            "title": "El inicio de la historia",
+            "audio": "./content/libros/el-libro/1/seccion_1_es.mp3"
+          },
+          "video": "https://www.youtube.com/embed/T_rzkZUzMs8?si=hpKeE8YLeVN3MCkH"
+        }
+      ]
+    }
+  ]
 }

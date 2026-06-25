@@ -2,14 +2,14 @@
   {
     "id": "el-libro",
     "section": "libros",
-    "date": "2026-05-24",
+    "date": "2026-06-25",
     "en": {
       "title": "The Book of Zenith",
-      "excerpt": "Coming soon..."
+      "excerpt": "Chapter 1, Section 1 available."
     },
     "es": {
-      "title": "El Libro del Cenit",
-      "excerpt": "Próximamente..."
+      "title": "El Libro del Zenit",
+      "excerpt": "Capítulo 1, Sección 1 disponible."
     },
     "meta_path": "./content/libros/el-libro/meta.json"
   },
