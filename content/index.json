@@ -1,5 +1,20 @@
 [
   {
+    "id": "de-monolitos-a-microservicios",
+    "section": "articulos",
+    "date": "2026-07-02",
+    "series": "arquitectura",
+    "en": {
+      "title": "From Monoliths to Microservices",
+      "excerpt": "Software architecture is not just about choosing technologies..."
+    },
+    "es": {
+      "title": "De Monolitos a Microservicios",
+      "excerpt": "La arquitectura de software no va de elegir el framework de moda..."
+    },
+    "meta_path": "./content/articulos/arquitectura/de-monolitos-a-microservicios/meta.json"
+  },
+  {
     "id": "el-libro",
     "section": "libros",
     "date": "2026-06-25",

@@ -27,3 +27,6 @@ It is simple: does it drive us to action, or to passivity? Is the action good, s
 
 And if it drives us to passivity? It is probably not an object that brings us value.
 We could venture to say that it even subtracts value from us. Human value, because it empties us of the action that makes us who we are. And social value, because it turns us into a mere receptacle for that which serves a purpose foreign to us as a whole.
+
+
+*Translated with AI from the original in Spanish*

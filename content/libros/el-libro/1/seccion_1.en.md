@@ -28,3 +28,6 @@ Everything worked. It seemed perfect. It was the future.
 Everything was getting worse.
 
 And nobody seemed to notice the difference.
+
+
+*Translated with AI from the original in Spanish*

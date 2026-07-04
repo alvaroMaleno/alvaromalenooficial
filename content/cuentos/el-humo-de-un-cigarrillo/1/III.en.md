@@ -41,3 +41,5 @@ Midnight was approaching. The rhythm of the music did not wane, nor did that of 
 "You are a dead man."
 
 He looked around. He searched for the man who had been watching him all night. He was no longer there. Nor in the salon.
+
+*Translated with AI from the original in Spanish*

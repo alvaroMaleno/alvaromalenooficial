@@ -5,3 +5,6 @@ We look around and everything becomes "I". The ego invades our world, standing b
 Without ego, a car is just a moving vehicle, an object with wheels capable of transporting us from one place to another. What other people say becomes a mere vibration in the air, devoid of meaning unless we endow it with one, and an object on a screen is just a set of pixels showing us an image.
 
 Without ego, silence is our life, our calm, our freedom. The Present.
+
+
+*Translated with AI from the original in Spanish*

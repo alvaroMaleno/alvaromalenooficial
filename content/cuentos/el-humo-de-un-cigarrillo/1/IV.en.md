@@ -53,3 +53,6 @@ The spectacle ended. Everyone left separately to finish the day in their own way
 "No one knows of such a curious guest.
 
 Yours always, A. de Casas."
+
+
+*Translated with AI from the original in Spanish*
